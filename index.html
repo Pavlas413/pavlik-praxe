@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BV CUTS - Barber studio Brno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Abril+Fatface&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <section class="hero-section">
+        <nav class="nav">
+            <a href="#" class="active">Domů</a>
+            <a href="#">Služby</a>
+            <a href="#">O nás</a>
+            <a href="#">Kontakt</a>
+        </nav>
+        <div class="logo-container">
+            <img src="./images/img_logo.svg" alt="Nůžky logo" class="scissors-icon">
+            <img src="./images/img_bvcutslogo.png" alt="BV CUTS Brno logo" width="195">
+        </div>
+    </section>
+    
+    <section class="services-section">
+        <h2 class="section-title">Co děláme</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <img src="./images/img_nky.svg" alt="Nůžky ikona" class="service-icon">
+                <h3 class="service-title">Střih + úprava vousů</h3>
+                <p class="service-description">Vyladíme ti fade, vousy i něco navíc.<br>Péče o vlasy je základ</p>
+            </div>
+            <div class="service-card">
+                <img src="./images/img_bitva.svg" alt="Břitva ikona" class="service-icon">
+                <h3 class="service-title">Holení</h3>
+                <p class="service-description">Ostrá břitva se postará o všechny nedokonalé chloupky na tvé hlavě</p>
+            </div>
+            <div class="service-card">
+                <img src="./images/img_vousy.svg" alt="Vousy ikona" class="service-icon">
+                <h3 class="service-title">Péče a maska</h3>
+                <p class="service-description">tvůj ksicht si taky zaslouží servis. Dáme ti regenerační masku, páru a chill.</p>
+            </div>
+        </div>
+        <a href="#" class="cta-button">Objednej se zde</a>
+    </section>
+    
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 class="about-title">O nás</h2>
+                <p class="about-description">
+                    Jsme <span class="highlight">BV CUTS</span>, barberské studio z Brna. Dva kámoši, co to berou vážně - <span class="highlight">precizní</span> <span class="highlight">střihy</span>, čistá práce a pohodová <span class="highlight">atmosféra</span>. U nás nejde jen o vlasy, ale o <span class="highlight">zážitek</span>.
+                </p>
+            </div>
+            <img src="./images/img_frame_6.png" alt="BV CUTS barbers" class="about-image">
+        </div>
+    </section>
+    
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <img src="./images/img_nky_orange_a100.svg" alt="Nůžky ikona" class="stat-icon">
+                <div class="stat-number" id="haircuts-count">450+</div>
+                <div class="stat-label">Střihů</div>
+            </div>
+            <div class="stat-item">
+                <img src="./images/img_barbershop.svg" alt="Barbershop ikona" class="stat-icon">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Pobočka</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section">
+        <h2 class="contact-title">Kontaktuj nás</h2>
+        <p class="contact-subtitle">Chceš nový fresh střih, fade nebo jen hodit řeč, co ti bude sedět? Ozvi se nám přes formulář, Instagram nebo rovnou zavolej. Věci řešíme v klidu, rychle a po svém - žádný korporátní přístup.</p>
+        <div class="contact-info-container">
+            <div class="contact-item">
+                <img src="./images/img_lokace.svg" alt="Lokace ikona" class="contact-icon">
+                <h3 class="contact-item-title">Adresa</h3>
+                <p class="contact-item-text">Drobného 34, 613 00<br>Brno - Černá Pole</p>
+            </div>
+            <div class="contact-item">
+                <img src="./images/img_email_obrzek.svg" alt="Email ikona" class="contact-icon">
+                <h3 class="contact-item-title">EMAIL</h3>
+                <p class="contact-item-text">example@strihy.com</p>
+            </div>
+            <div class="contact-item">
+                <img src="./images/img_telefonobrzek.svg" alt="Telefon ikona" class="contact-icon">
+                <h3 class="contact-item-title">Telefon</h3>
+                <p class="contact-item-text">720 555 212</p>
+            </div>
+            <div class="contact-item">
+                <img src="./images/img_hodinyobrzek.svg" alt="Hodiny ikona" class="contact-icon">
+                <h3 class="contact-item-title">Kdy stříháme?</h3>
+                <p class="contact-item-text">Po - Pá: 10 - 18<br>Víkend - Zavřeno</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation active state
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Service card hover effect
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // CTA button click
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Objednávkový systém se brzy otevře!');
+        });
+        
+        // Animate stats counter on scroll
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target > 450 ? 10 : 1;
+            const stepTime = Math.abs(Math.floor(duration / (target / increment)));
+            
+            const timer = setInterval(function() {
+                start += increment;
+                element.textContent = start + '+';
+                if (start >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+        
+        // Check if element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        
+        // Trigger counter animation when stats section is in view
+        const haircutsCount = document.getElementById('haircuts-count');
+        let animated = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!animated && isInViewport(haircutsCount)) {
+                animateCounter(haircutsCount, 450, 2000);
+                animated = true;
+            }
+        });
+    </script>
+</body>
+</html>
